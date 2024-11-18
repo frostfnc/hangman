@@ -6,5 +6,10 @@
 - Created file structure
 - Created the first iteration of html
 
+-----------------------------------------------------------------
 18/11/2024
+- 
 
+-----------------------------------------------------------------
+Paper Like border-radius property:
+https://codepen.io/tmrDevelops/pen/NPXodB
