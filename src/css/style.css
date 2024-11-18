@@ -1,5 +1,6 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Itim&family=Lacquer&family=Pangolin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Schoolbell&display=swap");
 
 * {
 	margin: 0;
@@ -7,11 +8,65 @@
 }
 
 body {
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: "Roboto", sans-serif;
+	font-family: "Schoolbell", cursive;
+	font-style: normal;
+	background-image: url(/img/paper.jpg);
+	color: rgb(0, 0, 0);
+	user-select: none;
+}
+
+#game-title {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	font-size: 6rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 4px rgb(0, 0, 0);
+	/*letter-spacing: rem;
+	*/
+	margin: 0rem 0rem 0rem 0rem;
+	animation: pulseishon 5s infinite;
+	-webkit-animation: pulseishon 5s infinite;
+}
+
+#game-title small {
+	font-size: 1.5rem;
+	margin: 0rem 0rem 1rem 0rem;
+}
+
+@keyframes pulseishon {
+	0% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+	}
+}
+
+#container-word {
+	font-size: 4rem;
 }
 
 #warp-keyboard-hangman {
@@ -23,6 +78,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 2rem;
+	font-size: 2rem;
 }
 
 .row {
@@ -30,7 +87,10 @@ body {
 }
 
 .row .word {
-	border: 1px solid black;
+	/* background-color: rgb(70, 130, 180); */
+	border: 0.1rem solid rgb(0, 0, 0);
+	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	padding: 1rem;
 	margin: 0.4rem;
 	transition: 0.3s;
@@ -40,17 +100,22 @@ body {
 	-o-transition: 0.3s;
 }
 
-.row .word:not(.used):hover {
+.row .word:not(.correct):not(.incorrect):hover {
 	cursor: pointer;
-	transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	-o-transform: scale(1.1);
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
 }
 
-.row .word.used {
-	background-color: rgb(111, 111, 111);
+.row .word.correct {
+	background-color: rgb(0, 255, 0);
+	color: rgb(0, 0, 0);
+}
+
+.row .word.incorrect {
+	background-color: rgb(255, 0, 0);
 }
 
 img {
