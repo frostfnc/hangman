@@ -8,6 +8,11 @@
 
 -----------------------------------------------------------------
 18/11/2024
+- Added background image
+- Added fonts that I will use
+- Added morelikely definite styles
+- Added a keyframe
+- Added styles for correct/incorrect letters
 - 
 
 -----------------------------------------------------------------
