@@ -86,7 +86,7 @@ body {
 	display: flex;
 }
 
-.row .word {
+.row .letter {
 	/* background-color: rgb(70, 130, 180); */
 	border: 0.1rem solid rgb(0, 0, 0);
 	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -100,7 +100,7 @@ body {
 	-o-transition: 0.3s;
 }
 
-.row .word:not(.correct):not(.incorrect):hover {
+.row .letter:not(.correct):not(.incorrect):hover {
 	cursor: pointer;
 	transform: scale(1.05);
 	-webkit-transform: scale(1.05);
@@ -109,12 +109,12 @@ body {
 	-o-transform: scale(1.05);
 }
 
-.row .word.correct {
+.row .letter.correct {
 	background-color: rgb(0, 255, 0);
 	color: rgb(0, 0, 0);
 }
 
-.row .word.incorrect {
+.row .letter.incorrect {
 	background-color: rgb(255, 0, 0);
 }
 
