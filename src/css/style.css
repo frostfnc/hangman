@@ -1,124 +1,174 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Itim&family=Lacquer&family=Pangolin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Schoolbell&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
 	height: 100vh;
+	font-family: "Roboto", sans-serif;
+	background: linear-gradient(45deg, #ff6b6b 25%, #f7f7f7 25%, #f7f7f7 50%, #ff6b6b 50%, #ff6b6b 75%, #f7f7f7 75%, #f7f7f7 100%);
+	background-size: 56.57px 56.57px;
+	color: #333;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: "Schoolbell", cursive;
-	font-style: normal;
-	background-image: url(/img/paper.jpg);
-	color: rgb(0, 0, 0);
-	user-select: none;
 }
 
-#game-title {
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	flex-direction: column;
-	font-size: 6rem;
-	font-weight: 900;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 4px rgb(0, 0, 0);
-	/*letter-spacing: rem;
-	*/
-	margin: 0rem 0rem 0rem 0rem;
-	animation: pulseishon 5s infinite;
-	-webkit-animation: pulseishon 5s infinite;
-}
-
-#game-title small {
-	font-size: 1.5rem;
-	margin: 0rem 0rem 1rem 0rem;
-}
-
-@keyframes pulseishon {
-	0% {
-		transform: scale(1);
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-	}
-	50% {
-		transform: scale(1.1);
-		-webkit-transform: scale(1.1);
-		-moz-transform: scale(1.1);
-		-ms-transform: scale(1.1);
-		-o-transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-	}
-}
-
-#container-word {
-	font-size: 4rem;
-}
-
-#warp-keyboard-hangman {
-	display: flex;
-}
-
-#container-keyboard {
+#game-container {
+	background: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(10px);
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 800px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	margin: 2rem;
+}
+
+#category-section {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+
+#category-select {
+	padding: 0.5rem;
+	font-size: 1rem;
+	margin-right: 1rem;
+}
+
+#stats-section,
+#game-section,
+#keyboard-section {
+	margin-bottom: 2rem;
+	width: 100%;
+}
+
+#stats {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+#stats > div {
+	text-align: center;
+}
+
+#stats label {
+	display: block;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+#word {
 	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+#image {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+#hangman-image {
+	max-width: 100%;
+	height: auto;
+}
+
+#keyboard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .row {
 	display: flex;
+	justify-content: center;
+	margin-bottom: 0.5rem;
 }
 
 .row .letter {
-	/* background-color: rgb(70, 130, 180); */
-	border: 0.1rem solid rgb(0, 0, 0);
-	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	background-color: #333;
+	color: #fff;
 	padding: 1rem;
-	margin: 0.4rem;
-	transition: 0.3s;
-	-webkit-transition: 0.3s;
-	-moz-transition: 0.3s;
-	-ms-transition: 0.3s;
-	-o-transition: 0.3s;
+	margin: 0.2rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: transform 0.2s, background-color 0.2s;
 }
 
-.row .letter:not(.correct):not(.incorrect):hover {
-	cursor: pointer;
-	transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	-moz-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
+.row .letter:hover {
+	transform: scale(1.1);
 }
 
 .row .letter.correct {
-	background-color: rgb(0, 255, 0);
-	color: rgb(0, 0, 0);
+	background-color: #4caf50;
 }
 
 .row .letter.incorrect {
-	background-color: rgb(255, 0, 0);
+	background-color: #f44336;
 }
 
-img {
-	width: 200px;
-	height: 200px;
+#end-game-message {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	padding: 2rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 2rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+#end-game-message.hidden {
+	display: none;
+}
+
+#message-text {
+	margin-bottom: 1rem;
+	font-size: 2.5rem;
+}
+
+#restart-button {
+	background-color: #4caf50;
+	color: white;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.2s;
+}
+
+#restart-button:hover {
+	background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+	#word {
+		font-size: 1.5rem;
+	}
+
+	#stats {
+		flex-direction: column;
+	}
+
+	#stats > div {
+		margin-bottom: 1rem;
+	}
 }

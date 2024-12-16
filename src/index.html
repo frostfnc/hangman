@@ -4,59 +4,83 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
-		<title>Hangman</title>
+		<title>Ahorcado</title>
 	</head>
 	<body>
-		<h1 id="game-title">Hangman <small>By Sergi Camps</small></h1>
-
-		<div id="container-word"></div>
-		<div id="warp-keyboard-hangman">
-			<div id="container-keyboard">
-				<div class="row">
-					<div class="letter">Q</div>
-					<div class="letter">W</div>
-					<div class="letter">E</div>
-					<div class="letter">R</div>
-					<div class="letter">T</div>
-					<div class="letter">Y</div>
-					<div class="letter">U</div>
-					<div class="letter">I</div>
-					<div class="letter">O</div>
-					<div class="letter">P</div>
+		<div id="game-container">
+			<section id="category-section">
+				<label for="category-select">Elige una categoria:</label>
+				<select id="category-select">
+					<option value="tecnologia">Tecnología</option>
+					<option value="programacion">Programación</option>
+					<option value="astronomia">Astronomía</option>
+					<option value="peliculas">Peliculas</option>
+				</select>
+			</section>
+			<section id="stats-section">
+				<div id="stats">
+					<div id="timer-container">
+						<label for="timer">Tiempo restante:</label>
+						<div id="timer">00:05</div>
+					</div>
+					<div id="attempts-container">
+						<label for="attempts">Intentos restantes:</label>
+						<div id="attempts">7</div>
+					</div>
+					<div id="errors-container">
+						<label for="errors">Errores:</label>
+						<div id="errors">0</div>
+					</div>
 				</div>
-				<div class="row">
-					<div class="letter">A</div>
-					<div class="letter">S</div>
-					<div class="letter">D</div>
-					<div class="letter">F</div>
-					<div class="letter">G</div>
-					<div class="letter">H</div>
-					<div class="letter">J</div>
-					<div class="letter">K</div>
-					<div class="letter">L</div>
-					<div class="letter">Ñ</div>
+			</section>
+			<section id="game-section">
+				<div id="word"></div>
+				<div id="image">
+					<img id="hangman-image" src="../assets/img/Stage-0.jpg" alt="Hangman Image" />
 				</div>
-				<div class="row">
-					<div class="letter">Z</div>
-					<div class="letter">X</div>
-					<div class="letter">C</div>
-					<div class="letter">V</div>
-					<div class="letter">B</div>
-					<div class="letter">N</div>
-					<div class="letter">M</div>
+			</section>
+			<section id="keyboard-section">
+				<div id="keyboard">
+					<div class="row">
+						<div class="letter">Q</div>
+						<div class="letter">W</div>
+						<div class="letter">E</div>
+						<div class="letter">R</div>
+						<div class="letter">T</div>
+						<div class="letter">Y</div>
+						<div class="letter">U</div>
+						<div class="letter">I</div>
+						<div class="letter">O</div>
+						<div class="letter">P</div>
+					</div>
+					<div class="row">
+						<div class="letter">A</div>
+						<div class="letter">S</div>
+						<div class="letter">D</div>
+						<div class="letter">F</div>
+						<div class="letter">G</div>
+						<div class="letter">H</div>
+						<div class="letter">J</div>
+						<div class="letter">K</div>
+						<div class="letter">L</div>
+						<div class="letter">Ñ</div>
+					</div>
+					<div class="row">
+						<div class="letter">Z</div>
+						<div class="letter">X</div>
+						<div class="letter">C</div>
+						<div class="letter">V</div>
+						<div class="letter">B</div>
+						<div class="letter">N</div>
+						<div class="letter">M</div>
+					</div>
 				</div>
-			</div>
-			<!-- <div id="container-hangman">
-				<img src="../img/hangman.jpg" alt="" />
-			</div> -->
+			</section>
 		</div>
-		<div>
-			<div id="container-time"></div>
-			<div id="contianer-incorrect-letters"></div>
-			<div id="container-errors"></div>
+		<div id="end-game-message" class="hidden">
+			<div id="message-text"></div>
+			<button id="restart-button">Volver a Jugar</button>
 		</div>
-		<div id="container-score"></div>
-
 		<script src="js/script.js"></script>
 	</body>
 </html>
