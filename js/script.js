@@ -50,7 +50,7 @@ function resetGame() {
 	attempts.textContent = remainingAttempts;
 	errors.textContent = errorCount;
 	word.innerHTML = "";
-	hangmanImage.src = "assets/img/tage-0.jpg";
+	hangmanImage.src = "./assets/img/tage-0.jpg";
 	clearInterval(countdown);
 	clearTimeout(clickTimer); // Reiniciem el temporitzador de clic
 	letters.forEach((letter) => {
@@ -121,7 +121,7 @@ function checkLetterInWord(letter, e) {
 // Funció per actualitzar la imatge del penjat
 function updateHangmanImage() {
 	const stage = Math.min(errorCount, 7); // Assegura que l'etapa no superi 7
-	hangmanImage.src = `assets/img/tage-${stage}.jpg`;
+	hangmanImage.src = `./assets/img/tage-${stage}.jpg`;
 }
 
 // Funció per iniciar el temporitzador
