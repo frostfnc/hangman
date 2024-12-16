@@ -50,7 +50,7 @@ function resetGame() {
 	attempts.textContent = remainingAttempts;
 	errors.textContent = errorCount;
 	word.innerHTML = "";
-	hangmanImage.src = "../assets/img/Stage-0.jpg";
+	hangmanImage.src = "./assets/img/Stage-0.jpg";
 	clearInterval(countdown);
 	clearTimeout(clickTimer); // Reiniciem el temporitzador de clic
 	letters.forEach((letter) => {
